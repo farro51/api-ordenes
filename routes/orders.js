@@ -12,7 +12,7 @@ router.get('/', (req, res, next) => {
 router.post('/', (req, res, next) => {
   const orden = req.body;
 
-  axios.post(`http://localhost:3002/reglas/validarOrden`, orden)
+  axios.post(`http://api-reglas:3002/reglas/validarOrden`, orden)
       .then(result => {
         if(result.status === 210) {
           res.statusMessage = 'Orden no creada';
